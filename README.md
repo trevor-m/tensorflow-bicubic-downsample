@@ -2,10 +2,11 @@
 tf.image.resize_images has aliasing when downsampling and does not have gradients for bicubic mode. This implementation fixes those problems.
 
 # Example
+These images have been downsample by a factor of 4 from the original.
 
-tf.images.resize_images | This code | scipy.misc.imresize
+tf.images.resize_images | This code | scipy.misc.imresize | Original
 --- | --- | ---
-![bicubic_mine](https://user-images.githubusercontent.com/12981474/40157448-eff91f06-5953-11e8-9a37-f6b5693fa03f.png) | ![bicubic_tf](https://user-images.githubusercontent.com/12981474/40157450-f247ee22-5953-11e8-9166-9bf979fb4363.png) | ![bicubic_scipy](https://user-images.githubusercontent.com/12981474/40157452-f57d816a-5953-11e8-8e5a-85a591932e3d.png)
+<img src="https://user-images.githubusercontent.com/12981474/40157450-f247ee22-5953-11e8-9166-9bf979fb4363.png" width="500"> | <img src="https://user-images.githubusercontent.com/12981474/40157448-eff91f06-5953-11e8-9a37-f6b5693fa03f.png" width="500"> | <img src="https://user-images.githubusercontent.com/12981474/40157452-f57d816a-5953-11e8-8e5a-85a591932e3d.png" width="500"> | <img src="https://user-images.githubusercontent.com/12981474/40157591-b5260abe-5954-11e8-8218-25ee937425ec.png" width="500">
 
 # Usage
 ```
