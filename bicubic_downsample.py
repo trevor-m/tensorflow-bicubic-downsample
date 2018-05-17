@@ -31,16 +31,8 @@ def apply_bicubic_downsample(x, filter, factor):
   filter_height = factor*4
   filter_width = factor*4
   strides = factor
-  in_height = tf.shape(x)[1]
-  in_width = tf.shape(x)[2]
-  if (in_height % strides == 0):
-    pad_along_height = max(filter_height - strides, 0)
-  else:
-    pad_along_height = max(filter_height - (in_height % strides), 0)
-  if (in_width % strides == 0):
-    pad_along_width = max(filter_width - strides, 0)
-  else:
-    pad_along_width = max(filter_width - (in_width % strides[2]), 0)
+  pad_along_height = max(filter_height - strides, 0)
+  pad_along_width = max(filter_width - strides, 0)
   # compute actual padding values for each side
   pad_top = pad_along_height // 2
   pad_bottom = pad_along_height - pad_top
