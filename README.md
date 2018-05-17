@@ -2,7 +2,7 @@
 tf.image.resize_images has aliasing when downsampling and does not have gradients for bicubic mode. This implementation fixes those problems.
 
 # Example
-These images have been downsample by a factor of 4 from the original.
+These images have been downsample by a factor of 4 from the original. The results from this code matches the scipy.misc.imresize results exactly.
 
 tf.images.resize_images | This code | scipy.misc.imresize | Original
 --- | --- | --- | ---
